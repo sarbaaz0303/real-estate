@@ -1,0 +1,58 @@
+.sidebar {
+    grid-column: sidebar-start / sidebar-end;
+    grid-row: 1 / -1;
+
+    background-color: $color-primary;
+    text-align: center;
+
+    @media only screen and (max-width: $bp-large) {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        text-align: end;
+    }
+
+    &-btn {
+        padding: 4rem 1rem;
+        cursor: pointer;
+
+        @media only screen and (max-width: $bp-large) {
+            padding: 2rem 0;
+            margin-right: 3rem;
+        }
+    }
+}
+
+.nav-btn {
+    border: none;
+    outline: none;
+    border-radius: 0;
+
+    background-color: $color-white;
+    height: 2px;
+    width: 4.5rem;
+
+    &::before,
+    &::after {
+        content: "";
+        display: block;
+        background-color: $color-white;
+        height: 2px;
+        width: 4.5rem;
+    }
+
+    &::before {
+        transform: translateY(-1.5rem);
+    }
+    &::after {
+        transform: translateY(1.3rem);
+    }
+
+    @media only screen and (max-width: $bp-large) {
+        &::before {
+            transform: translateY(-1.2rem);
+        }
+        &::after {
+            transform: translateY(1rem);
+        }
+    }
+}
